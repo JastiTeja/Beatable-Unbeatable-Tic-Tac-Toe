@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    font-family: Raleway;
+    background-color: #051e3b; /* Dark background */
+    color: #FBFFFE; /* Light text */
+  }
+  
+  h1 {
+    font-size: 4em;
+    font-weight: bold;
+  }
+  
+  #canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80vw; /* Smaller size */
+    height: 80vh; /* Smaller size */
+    max-width: 80vh; /* Smaller size */
+    max-height: 80vw; /* Smaller size */
+    overflow: hidden;
+    color: white;
+  }
+  
+  #tooltip {
+    background: #444444; /* Darker tooltip background */
+    color: #FBFFFE; /* Light text */
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    border-radius: 0px 0px 8px 8px;
+    padding: 10px;
+    visibility: hidden;
+    opacity: 0.7;
+  }
+  
+  #end,
+  #start {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: radial-gradient(100% 225% at 100% 0%, #4ECDC4 0%, #6DCFF6 100%),
+      linear-gradient(235deg, #6DCFF6 0%, #1b1b1e 100%),
+      linear-gradient(
+        45deg,
+        #4ECDC4 0%,
+        #6DCFF6 40%,
+        #4ECDC4 40%,
+        #1b1b1e 50%,
+        #1b1b1e 50%,
+        #6DCFF6 70%,
+        #4ECDC4 70%,
+        #4ECDC4 100%
+      ),
+      linear-gradient(
+        180deg,
+        #4ECDC4 0%,
+        #6DCFF6 43%,
+        #1b1b1e 43%,
+        #6DCFF6 62%,
+        #4ECDC4 62%,
+        #1b1b1e 80%,
+        #6DCFF6 80%,
+        #4ECDC4 100%
+      );
+    background-blend-mode: overlay, hard-light, overlay, normal;
+    width: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 5px 0px rgba(0, 0, 0, 0.2),
+      10px 5px 10px 0 rgba(0, 0, 0, 0.19);
+    transition: 1s opacity;
+    color: #FBFFFE; /* Light text */
+    font-size: 1em; /* Keep original size */
+  }
+  
+  #end {
+    visibility: hidden;
+    opacity: 0;
+  }
+  
+  button {
+    background: #000000; /* Dark button background */
+    color: #FBFFFE; /* Light text */
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-family: Raleway;
+    transition: background 0.3s;
+  }
+  
+  button:hover {
+    background: #234b53; /* Hover background */
+  }
+  
+  #end > *,
+  #start > * {
+    margin: 20px;
+  }
+  
+  .switchLabel {
+    line-height: 40px;
+    font-size: 20px;
+    text-align: center;
+    display: block;
+  }
+  
+  .switchLabel span {
+    margin: 10px;
+    color: #ffffff; /* Secondary text */
+  }
+  
+  .switchLabel .selected {
+    color: #020631; /* Light text */
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 70px;
+    height: 34px;
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 100%;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000; /* Slider color */
+    transition: background-color 0.4s;
+    border-radius: 34px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #1b1b1e; /* Slider knob color */
+    transition: transform 0.4s;
+    border-radius: 50%;
+  }
+  
+  input:checked + .slider {
+    background-color: #fefefe; /* Slider active color */
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(36px);
+  }
+  

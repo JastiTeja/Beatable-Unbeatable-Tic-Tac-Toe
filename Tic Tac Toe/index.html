@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Raleway");
+    </style>
+</head>
+  <body>
+    <canvas id="canvas"></canvas>
+<div id="tooltip">
+  Next to move: <span id="tooltipText">X</span>
+</div>
+<div id="start">
+  <br>
+  <label class="switchLabel">
+    <span id="offLabel">AI off</span>
+    <span class="switch">
+      <input type="checkbox" onclick="toggleCheckboxLabel()" id="aiSwitch" checked />
+      <div class="slider"></div>
+    </span>
+    <span id="onLabel" class="selected">AI on</span>
+  </label>
+
+  <h2>Select your symbol</h2>
+  (X will be starting)
+  <br>
+  <button id="buttonX" onclick="startGame(this)"><b>X</b></button>
+  <button id="buttonO" onclick="startGame(this)"><b>O</b></button>
+</div>
+<div id="end">
+  <h2 id="winnerHeader"></h2>
+  <h1 id="winnerText"></h1>
+  <button id="playAgain"><b>Play Again</b></button>
+</div>
+    <script src="script.js"></script>
+</body>
